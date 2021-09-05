@@ -1,0 +1,116 @@
+:root{
+    --bgcolor:#333;
+    --textColor:#eee;
+    --listColor:#000;
+}
+
+
+*,*::after,*::before{
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+body{
+    background-color: #333;
+    width:100vw;
+    margin:0;
+    height:100vh;
+}
+body.light{
+    background-color: #eee;
+}
+
+.taskApp{
+    display:flex;
+    flex-flow:column wrap;
+    justify-content: center;
+    align-items:center;
+    margin-top:10rem;
+    width:100%;
+}
+
+.newTask{
+    text-decoration:none;
+    border-radius:4px;
+    background-color:#f0a;
+    border:none;
+    outline:2px solid #000;
+    padding:1rem 2rem;
+    margin-bottom:1rem;
+    cursor:pointer;
+    box-shadow:inset 5px -5px 10px rgba(0 0 0 /.5),5px 5px 10px rgba(0 0 0 /.8);
+}
+.createTask{
+    border:none;
+    background-color:#fff;
+    width:clamp(10rem,75%,20rem);
+    border-radius:10px;
+    padding:5px;
+    margin-bottom:2rem;
+    padding:10px;
+    box-shadow:inset 5px -5px 10px rgba(0 0 0 /.5),5px 5px 10px rgba(0 0 0 /.8);
+    outline:none;
+}
+.taskList{
+    display:flex;
+    flex-flow:column wrap;
+    width:100%;
+    align-items:center;
+}
+.task{
+    display:flex;
+    justify-content:space-between;
+    width:75%;
+    max-width:500px;
+    background-color: #f0a;
+    padding:.5rem;
+    border-radius:3px;
+    position:relative;
+    margin-bottom:20px;
+    cursor:pointer;
+    
+}
+
+.task a{
+    text-decoration:none;
+    color:var(--textColor);
+    color:var(--listColor);
+}
+.cross{
+    position:absolute;
+    right:-2rem;
+}
+.tick{
+    opacity:0;
+    transition:opacity 1s;
+}
+
+.tick.complete{
+    opacity:1;
+}
+
+.header{
+    height:8%;
+    background-color: #777;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    font-size:.8rem;
+}
+.dark-light-mode{
+    display:flex;
+    align-items:center;
+    cursor:pointer; 
+    padding:10px;
+}
+.colorText{
+    display:flex;
+    align-items:center;
+    
+}
+.label-of-colorTextSelector{
+    padding-right:10px;
+}
+
+.sun-moon-icon{
+    max-width:20px;
+}

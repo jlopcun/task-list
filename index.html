@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bienvenido a mi app online para que puedas crear tus notas">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/c3dec90392.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Task list &#9989; &#10060;</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="dark-light-mode" id="dark-light-mode">
+            <img  src="icons8-sun.svg" class="sun-moon-icon" id="sun-or-moon">
+            <p class="dark-or-light" id="darkOrLight">Light Mode</p>
+        </div>
+        <div class="colorText" id="colorText"> 
+            <label for="colorTextSelect" class="label-of-colorTextSelector" id="label-of-colorTextSelector"> text color</label>
+            <input type="color" id="colorTextSelector" class="colorTextSelector" autocomplete="off">
+        </div>
+    </header>
+    <div id="taskApp" class="taskApp">
+        <button id="newTask" class="newTask">Add a new task</button>
+        <input type="text" id="createTask" class="createTask" placeholder="Enter your task..." autocomplete="off">
+        <div id="taskList" class="taskList"></div>
+
+        </div>
+    
+
+    <template class="taskModel" id="taskModel">
+            <div id="task" class="task">
+                
+                <a class="taskContent"></a>
+                <div class="tick" id="tick-1">
+                    &#9989;
+                </div>
+                <div class="cross" id="cross">
+                    &#10060;
+                </div>
+                </div>
+    </template>
+</body>
+</html>
