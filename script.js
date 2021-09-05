@@ -50,11 +50,11 @@ const $colorTextSelector = document.getElementById('colorTextSelector');
 $darkLightMode.addEventListener('click',()=>{
     document.body.classList.toggle('light');
    if($sunOrMoon.src.includes('sun') && $darkOrLight.textContent==='Light Mode'){
-       $sunOrMoon.src="moon.svg";
+       $sunOrMoon.src="images/moon.svg";
        $darkOrLight.textContent = 'Dark Mode';
    }
    else{
-       $sunOrMoon.src="icons8-sun.svg";
+       $sunOrMoon.src="images/icons8-sun.svg";
        $darkOrLight.textContent = 'Light Mode'
    }
 })
