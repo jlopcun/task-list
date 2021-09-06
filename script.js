@@ -1,11 +1,11 @@
 
 // alert('Welcome to jlop Notes online')
 
-
 const $task = document.getElementById('task');
 const $taskList = document.getElementById('taskList');
 const $taskApp = document.getElementById('taskApp');
 const $createTask = document.getElementById('createTask');
+
 $taskApp.addEventListener('click',function(e){
     
     if(e.target.className==='task'){
@@ -19,12 +19,23 @@ $taskApp.addEventListener('click',function(e){
      }
     else if(e.target.className ==='cross'){
         const parent = e.target.parentElement;
-        $taskList.removeChild(parent)
+        const content = parent.querySelector('A').textContent;
+        $taskList.removeChild(parent);
+        localStorage.removeItem(content);
+       
+        
+        
     }
     else if(e.target.className==='newTask'){
-        (!$createTask.value)
-        ?alert('ingrese una tarea')
-        :PrintTask($createTask.value);
+        const value = $createTask.value;
+        if(!$createTask.value){
+            alert('ingrese un contenido para su nota');
+        }
+        else{
+            PrintTask(value);
+            localStorage.setItem(value,value);
+            
+        }
     }
     
    
@@ -35,10 +46,13 @@ $taskApp.addEventListener('click',function(e){
 
 const PrintTask = content =>{
     let $newTemplate = document.getElementById('taskModel').content.cloneNode(true);
-    $newTemplate.querySelector('.taskContent').textContent = `${$taskList.children.length+1}.-${content}`;
+    $newTemplate.querySelector('.taskContent').textContent = `${content}`;
     let fragment = document.createDocumentFragment();
     fragment.appendChild($newTemplate);
-    $taskList.appendChild(fragment)
+    $taskList.appendChild(fragment);
+    $createTask.value='';
+    
+    
 
 }
 
@@ -64,3 +78,45 @@ $colorTextSelector.addEventListener('change',()=>{
     let newColor = $colorTextSelector.value;
     document.documentElement.style.setProperty('--listColor',newColor);
 })
+
+
+
+   
+
+
+const $remove = document.getElementById('remove');
+
+$remove.addEventListener('dblclick',()=>{
+    $taskList.innerHTML='';
+    localStorage.clear();
+});
+
+if(localStorage.length>0){
+    for(let i=0;i<localStorage.length;i++){
+        let that = localStorage.getItem(localStorage.key(i));
+        if(that){
+            PrintTask(that)
+        }
+    }
+}
+
+
+
+
+
+
+
+console.log(localStorage)
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -38,6 +38,7 @@ body.light{
     margin-bottom:1rem;
     cursor:pointer;
     box-shadow:inset 5px -5px 10px rgba(0 0 0 /.5),5px 5px 10px rgba(0 0 0 /.8);
+    outline:none;
 }
 .createTask{
     border:none;
