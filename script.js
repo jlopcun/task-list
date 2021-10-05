@@ -1,11 +1,14 @@
 
-// alert('Welcome to jlop Notes online')
-
 const $task = document.getElementById('task');
 const $taskList = document.getElementById('taskList');
 const $taskApp = document.getElementById('taskApp');
 const $createTask = document.getElementById('createTask');
-
+const $newTask = document.getElementById('newTask');
+$createTask.addEventListener('keyup',function (e){
+    if(e.keyCode===13 &&  this.value.length>=3){
+        $newTask.click();
+    }
+})
 $taskApp.addEventListener('click',function(e){
     
     if(e.target.className==='task'){
@@ -106,7 +109,7 @@ if(localStorage.length>0){
 
 
 
-console.log(localStorage)
+
 
 
 
